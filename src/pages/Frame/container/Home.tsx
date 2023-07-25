@@ -25,23 +25,57 @@ const homeConfig = {
 };
 
 const mockMenuItems: MenuProps['items'] = [
-  // {
-  //   label: '权限管理',
-  //   key: 'privilege',
-  //   children: [
-  //     {
-  //       label: <Link to="/privilege/add">添加权限</Link>,
-  //       key: 'privilege-add',
-  //       // icon: <UnorderedListOutlined />,
-  //     },
-  //     {
-  //       label: <Link to="/privilege/list">权限列表</Link>,
-  //       key: 'privilege-list',
-  //       // icon: <UnorderedListOutlined />,
-  //     },
-  //   ],
-  //   // icon: <LockOutlined />,
-  // },
+  {
+    label: '账号管理',
+    key: 'privilege',
+    children: [
+      {
+        label: <Link to="/privilege/add">添加权限</Link>,
+        key: 'privilege-add',
+        // icon: <UnorderedListOutlined />,
+      },
+      {
+        label: <Link to="/privilege/list">权限列表</Link>,
+        key: 'privilege-list',
+        // icon: <UnorderedListOutlined />,
+      },
+    ],
+    // icon: <LockOutlined />,
+  },
+  {
+    label: '角色管理',
+    key: 'privilege',
+    children: [
+      {
+        label: <Link to="/privilege/add">添加权限</Link>,
+        key: 'privilege-add',
+        // icon: <UnorderedListOutlined />,
+      },
+      {
+        label: <Link to="/privilege/list">权限列表</Link>,
+        key: 'privilege-list',
+        // icon: <UnorderedListOutlined />,
+      },
+    ],
+    // icon: <LockOutlined />,
+  },
+  {
+    label: '权限管理',
+    key: 'privilege',
+    children: [
+      {
+        label: <Link to="/privilege/add">添加权限</Link>,
+        key: 'privilege-add',
+        // icon: <UnorderedListOutlined />,
+      },
+      {
+        label: <Link to="/privilege/list">权限列表</Link>,
+        key: 'privilege-list',
+        // icon: <UnorderedListOutlined />,
+      },
+    ],
+    // icon: <LockOutlined />,
+  },
 ];
 
 /**
@@ -142,17 +176,20 @@ const FrameHome: React.FC = () => {
    * 获取个人资料
    */
   const getProfileInfo = () => {
-    ProfileService.getProfileInfo()
-      .then((profileInfo: ProfileInfoType) => {
-        setProfileAccountInfo(profileInfo.account_info);
-        setLoginAccountInfo(profileInfo.account_info);
-        setPrivilegeList(profileInfo.privilege_list);
-        setPrivilegeNavItems(profileInfo.privilege_list); // 更新导航权限
-        setPrivilegeMenusItems(profileInfo.privilege_list); // 更新菜单权限
-      })
-      .catch(e => {
-        console.log('get profile catch: ', e);
-      });
+    // setPrivilegeNavItems(); // 更新导航权限
+    setPrivilegeMenusItems(); // 更新菜单权限
+
+    // ProfileService.getProfileInfo()
+    //   .then((profileInfo: ProfileInfoType) => {
+    //     setProfileAccountInfo(profileInfo.account_info);
+    //     setLoginAccountInfo(profileInfo.account_info);
+    //     setPrivilegeList(profileInfo.privilege_list);
+    //     setPrivilegeNavItems(profileInfo.privilege_list); // 更新导航权限
+    //     setPrivilegeMenusItems(profileInfo.privilege_list); // 更新菜单权限
+    //   })
+    //   .catch(e => {
+    //     console.log('get profile catch: ', e);
+    //   });
   };
 
   /**
@@ -169,25 +206,26 @@ const FrameHome: React.FC = () => {
    * @param privilegeList 权限列表
    */
   const setPrivilegeMenusItems = (privilegeList?: PrivilegeListItemType[]) => {
-    if (!privilegeList || privilegeList.length === 0) {
-      setMenuItems([]);
-      return;
-    }
-    // 获取第一个导航的默认ID
-    let defNavId: bigint | undefined;
-    if (privilegeList && privilegeList.length > 0) {
-      defNavId = privilegeList[0].privilege_info.privilege_id;
-    }
-    // 查找导航对应的菜单权限
-    let menuPrivileges: PrivilegeListItemType[] = [];
-    privilegeList?.forEach(privilegeItem => {
-      if (privilegeItem.privilege_info.privilege_id === defNavId) {
-        menuPrivileges = privilegeItem.child_privileges;
-      }
-    });
-    let menuItems = getMenuItemsByPrivilegeList(menuPrivileges);
+    // if (!privilegeList || privilegeList.length === 0) {
+    //   setMenuItems([]);
+    //   return;
+    // }
+    // // 获取第一个导航的默认ID
+    // let defNavId: bigint | undefined;
+    // if (privilegeList && privilegeList.length > 0) {
+    //   defNavId = privilegeList[0].privilege_info.privilege_id;
+    // }
+    // // 查找导航对应的菜单权限
+    // let menuPrivileges: PrivilegeListItemType[] = [];
+    // privilegeList?.forEach(privilegeItem => {
+    //   if (privilegeItem.privilege_info.privilege_id === defNavId) {
+    //     menuPrivileges = privilegeItem.child_privileges;
+    //   }
+    // });
+    // let menuItems = getMenuItemsByPrivilegeList(menuPrivileges);
     // todo 测试加上mock
-    menuItems?.push(...mockMenuItems);
+    let menuItems = mockMenuItems
+    // menuItems?.push(...mockMenuItems);
     setMenuItems(menuItems);
   };
 
