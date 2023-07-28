@@ -1,6 +1,7 @@
 import httpRequest from "./http";
 import {getUrlConfig} from "../config/url";
 import {LoginResponseType} from "../store/types/loginType";
+import { request } from "http";
 
 const authUrl = {
     systemLogin: "/admin/auth/login",
@@ -13,6 +14,7 @@ const authUrl = {
 class Login {
 
     getSystemLoginUrl() :string {
+        return "http://localhost:3004/posts/"
         return getUrlConfig().proxyUrl + authUrl.systemLogin
     }
 

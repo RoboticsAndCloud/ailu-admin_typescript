@@ -14,20 +14,24 @@ const Login: React.FC = () => {
    * @param values
    */
   const systemLoginCallback = (values: { account_name: string; password: string }) => {
-    LoginService.systemLogin({
-      account_name: values.account_name,
-      password: values.password,
-      verify_code: 'mock',
-    })
-      .then((loginInfo: LoginResponseType) => {
-        DispatchLoginAction(dispatch, loginInfo);
-        window.location.href = '/';
-        // 登录异常
-      })
-      .catch(e => {
-        console.log('system login catch: ', e);
-        message.error('登录失败：' + e, 2);
-      });
+    const loginInfo = "admin"
+    DispatchLoginAction(dispatch, loginInfo);
+    window.location.href = '/';
+
+    // LoginService.systemLogin({
+    //   account_name: values.account_name,
+    //   password: values.password,
+    //   verify_code: 'mock',
+    // })
+    //   .then((loginInfo: LoginResponseType) => {
+    //     DispatchLoginAction(dispatch, loginInfo);
+    //     window.location.href = '/';
+    //     // 登录异常
+    //   })
+    //   .catch(e => {
+    //     console.log('system login catch: ', e);
+    //     message.error('登录失败：' + e, 2);
+    //   });
   };
 
   /**
