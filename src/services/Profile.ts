@@ -17,13 +17,19 @@ class Profile {
     /**
      * getProfileInfo 获取个人信息
      */
-    getProfileInfo(): Promise<ProfileInfoType> {
+    getProfileInfo(): Promise<any> {
         let profileInfoUrl = getUrlConfig().proxyUrl + profileUrl.profileInfo
-        // console.log("xxxxx", profileInfoUrl)
-        // fetch("http://127.0.0.1:3004/profile")
-        let info = httpRequest.get<ProfileInfoType>(profileInfoUrl, {})
+        let info = httpRequest.get<any>(profileInfoUrl, {})
         return info
     }
+
+    // getProfileInfo(): Promise<ProfileInfoType> {
+    //     let profileInfoUrl = getUrlConfig().proxyUrl + profileUrl.profileInfo
+    //     // console.log("xxxxx", profileInfoUrl)
+    //     // fetch("http://127.0.0.1:3004/profile")
+    //     let info = httpRequest.get<ProfileInfoType>(profileInfoUrl, {})
+    //     return info
+    // }
 
     /**
      * profileUpdate 个人信息更新

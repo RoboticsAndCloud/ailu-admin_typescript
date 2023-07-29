@@ -14,7 +14,7 @@
   "profile": {
     "account_info": {
       "account_id": 1,
-      "name": "string", 
+      "name": "admin", 
       "given_name": "given_name",
       "email": "@email",
       "phone": "123456789", 
@@ -26,50 +26,201 @@
     },
     "privilege_list":[
       {
-        "label": "账号",
-        "key": "privilege",
-        "children": [
+        "privilege_info": {   
+          "privilege_id": 1,
+          "name": "Index",
+          "parent_id": 0, 
+          "parent_ids": "0", 
+          "privilege_type": 1, 
+          "page_router": "/privilege/",
+          "api_path": "add",
+          "icon": "", 
+          "is_display": 1,
+          "sequence": 1,
+          "create_time": "20230606",
+          "update_time": "20230606"
+        },
+        "child_privileges":[
           {
-            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-            "key": "privilege-add",
-            "icon": "<UnorderedListOutlined />"
-          },
-          {
-            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-            "key": "privilege-list",
-            "icon": "<UnorderedListOutlined />"
-          }
-        ]
-      },
-      {
-        "label": "角色管理",
-        "key": "privilege",
-        "children": [
-          {
-            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-            "key": "privilege-add",
-            "icon": "<UnorderedListOutlined />"
-          },
-          {
-            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-            "key": "privilege-list",
-            "icon": "<UnorderedListOutlined />"
-          }
-        ]
-      },
-      {
-        "label": "权限管理",
-        "key": "privilege",
-        "children": [
-          {
-            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-            "key": "privilege-add",
-            "icon": "<UnorderedListOutlined />"
-          },
-          {
-            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-            "key": "privilege-list",
-            "icon": "<UnorderedListOutlined />"
+            "privilege_info": {   
+              "privilege_id": 2,
+              "name": "账号管理",
+              "parent_id": 1, 
+              "parent_ids": "1", 
+              "privilege_type": 2, 
+              "page_router": "/privilege/",
+              "api_path": "add",
+              "icon": "", 
+              "is_display": 1,
+              "sequence": 1,
+              "create_time": "20230606",
+              "update_time": "20230606"
+            },
+            "child_privileges":[
+              {
+                "privilege_info": {   
+                  "privilege_id": 3,
+                  "name": "添加",
+                  "parent_id": 1, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/add",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 4,
+                  "name": "修改",
+                  "parent_id": 1, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 14,
+                  "name": "删除",
+                  "parent_id": 1, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 14,
+                  "name": "列表",
+                  "parent_id": 1, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              }
+            ]
+          },{
+            "privilege_info": {   
+              "privilege_id": 22,
+              "name": "角色管理",
+              "parent_id": 1, 
+              "parent_ids": "1", 
+              "privilege_type": 2, 
+              "page_router": "/privilege/",
+              "api_path": "add",
+              "icon": "", 
+              "is_display": 1,
+              "sequence": 1,
+              "create_time": "20230606",
+              "update_time": "20230606"
+            },
+            "child_privileges":[
+              {
+                "privilege_info": {   
+                  "privilege_id": 23,
+                  "name": "添加",
+                  "parent_id": 22, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/add",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 24,
+                  "name": "修改",
+                  "parent_id": 22, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 25,
+                  "name": "删除",
+                  "parent_id": 22, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              },{
+                "privilege_info": {   
+                  "privilege_id": 26,
+                  "name": "列表",
+                  "parent_id": 22, 
+                  "parent_ids": "1", 
+                  "privilege_type": 2, 
+                  "page_router": "/privilege/list",
+                  "api_path": "add",
+                  "icon": "", 
+                  "is_display": 1,
+                  "sequence": 1,
+                  "create_time": "20230606",
+                  "update_time": "20230606"
+                },
+                "child_privileges":[
+                  
+                ]
+              }
+            ]
           }
         ]
       }
@@ -82,13 +233,11 @@
       "children": [
         {
           "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-          "key": "privilege-add",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-add"
         },
         {
           "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-          "key": "privilege-list",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-list"
         }
       ]
     },
@@ -98,13 +247,11 @@
       "children": [
         {
           "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-          "key": "privilege-add",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-add"
         },
         {
           "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-          "key": "privilege-list",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-list"
         }
       ]
     },
@@ -114,13 +261,11 @@
       "children": [
         {
           "label": "<Link to=\"/privilege/add\">添加权限</Link>",
-          "key": "privilege-add",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-add"
         },
         {
           "label": "<Link to=\"/privilege/list\">权限列表</Link>",
-          "key": "privilege-list",
-          "icon": "<UnorderedListOutlined />"
+          "key": "privilege-list"
         }
       ]
     }

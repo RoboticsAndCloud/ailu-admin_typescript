@@ -114,6 +114,7 @@ const getMenuItemsByPrivilegeList = (
   if (!privilegeList || privilegeList.length === 0) {
     return undefined;
   }
+  console.log('menuItems privilegeList:', privilegeList)
   privilegeList.forEach(privilegeItem => {
     menuItems?.push({
       label:
@@ -129,6 +130,8 @@ const getMenuItemsByPrivilegeList = (
       children: getMenuItemsByPrivilegeList(privilegeItem.child_privileges),
     });
   });
+
+  console.log('menuItems:', menuItems)
   return menuItems;
 };
 
@@ -180,17 +183,35 @@ const FrameHome: React.FC = () => {
     setPrivilegeMenusItems(); // 更新菜单权限
 
     ProfileService.getProfileInfo()
-      .then((profileInfo: ProfileInfoType) => {
-        // setProfileAccountInfo(profileInfo.account_info);
+      .then((profileInfo: any) => {
+        console.log('profileInfo.privilege_list:', profileInfo.privilege_list)
+        setProfileAccountInfo(profileInfo.account_info);
         setLoginAccountInfo(profileInfo.account_info);
         setPrivilegeList(profileInfo.privilege_list);
         setPrivilegeNavItems(profileInfo.privilege_list); // 更新导航权限
+        console.log('profileInfo.privilege_list2:', profileInfo.privilege_list)
+
         setPrivilegeMenusItems(profileInfo.privilege_list); // 更新菜单权限
       })
       .catch(e => {
         console.log('get profile catch: ', e);
         // alert(e)
       });
+
+  
+      // ProfileService.getProfileInfo()
+      // .then((profileInfo: ProfileInfoType) => {
+        
+      //   // setProfileAccountInfo(profileInfo.account_info);
+      //   setLoginAccountInfo(profileInfo.account_info);
+      //   setPrivilegeList(profileInfo.privilege_list);
+      //   setPrivilegeNavItems(profileInfo.privilege_list); // 更新导航权限
+      //   setPrivilegeMenusItems(profileInfo.privilege_list); // 更新菜单权限
+      // })
+      // .catch(e => {
+      //   console.log('get profile catch: ', e);
+      //   // alert(e)
+      // });
 
       
 
@@ -269,7 +290,7 @@ const FrameHome: React.FC = () => {
       //   // alert(error)
       // }
       
-      setLoginAccountInfo(mockProfileInfo.account_info);
+      // setLoginAccountInfo(mockProfileInfo.account_info);
       // setPrivilegeList(mockProfileInfo.privilege_list);
       // setPrivilegeNavItems(mockProfileInfo.privilege_list); // 更新导航权限
       // setPrivilegeMenusItems(mockProfileInfo.privilege_list); // 更新菜单权限
@@ -288,6 +309,31 @@ const FrameHome: React.FC = () => {
    * 更新菜单 item 数据
    * @param privilegeList 权限列表
    */
+  // const setPrivilegeMenusItems = (privilegeList?: MenuProps['items']) => {
+  //   if (!privilegeList || privilegeList.length === 0) {
+  //     setMenuItems([]);
+  //     return;
+  //   }
+  //   // 获取第一个导航的默认ID
+  //   let defNavId: bigint | undefined;
+  //   if (privilegeList && privilegeList.length > 0) {
+  //     defNavId = privilegeList[0].privilege_info.privilege_id;
+  //   }
+  //   // 查找导航对应的菜单权限
+  //   let menuPrivileges: PrivilegeListItemType[] = [];
+  //   privilegeList?.forEach(privilegeItem => {
+  //     if (privilegeItem.privilege_info.privilege_id === defNavId) {
+  //       menuPrivileges = privilegeItem.child_privileges;
+  //     }
+  //   });
+  //   let menuItems = getMenuItemsByPrivilegeList(menuPrivileges);
+  //   // // todo 测试加上mock
+  //   console.log(privilegeList)
+  //   // let menuItems = privilegeList
+  //   // menuItems?.push(...mockMenuItems);
+  //   setMenuItems(menuItems);
+  // };
+
   const setPrivilegeMenusItems = (privilegeList?: PrivilegeListItemType[]) => {
     if (!privilegeList || privilegeList.length === 0) {
       setMenuItems([]);

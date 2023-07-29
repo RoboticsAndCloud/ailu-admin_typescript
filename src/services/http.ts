@@ -42,7 +42,7 @@ httpService.interceptors.request.use(
 // response 返回结果拦截器
 httpService.interceptors.response.use(
    response => {
-    console.log('response:',response)
+    console.log('response:',response.data)
     return response
    }
     // (response: AxiosResponse<BaseResponse<any>>) => {
@@ -82,8 +82,8 @@ const httpRequest = {
         }
         return new Promise((resolve, reject) => {
             httpService(options)
-                .then((res: AxiosResponse<BaseResponse<T>>) => {
-                    return resolve(res.data.data)
+                .then((res: AxiosResponse<T>) => {
+                    return resolve(res.data)
                 })
                 .catch((err) => {
                     return reject(err)
