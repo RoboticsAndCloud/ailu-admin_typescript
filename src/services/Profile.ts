@@ -3,7 +3,8 @@ import httpRequest from "./http";
 import {ProfileInfoType} from "../store/types/profileType";
 
 const profileUrl = {
-    profileInfo: "/admin/profile/info",
+    // profileInfo: "/admin/profile/info",
+    profileInfo: "",
     profileUpdate: "/admin/profile/update",
     profileRepass: "/admin/profile/repass",
 }
@@ -18,7 +19,10 @@ class Profile {
      */
     getProfileInfo(): Promise<ProfileInfoType> {
         let profileInfoUrl = getUrlConfig().proxyUrl + profileUrl.profileInfo
-        return httpRequest.get<ProfileInfoType>(profileInfoUrl, {})
+        // console.log("xxxxx", profileInfoUrl)
+        // fetch("http://127.0.0.1:3004/profile")
+        let info = httpRequest.get<ProfileInfoType>(profileInfoUrl, {})
+        return info
     }
 
     /**

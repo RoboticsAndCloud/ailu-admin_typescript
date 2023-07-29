@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "login": [
     {
       "login_token": "admin"
     }
@@ -12,6 +12,117 @@
     }
   ],
   "profile": {
-    "name": "typicode"
-  }
+    "account_info": {
+      "account_id": 1,
+      "name": "string", 
+      "given_name": "given_name",
+      "email": "@email",
+      "phone": "123456789", 
+      "mobile": "123456789",
+      "status": 1, 
+      "create_time": "20230606",
+      "update_time": "20230607", 
+      "role_ids?": "22" 
+    },
+    "privilege_list":[
+      {
+        "label": "账号",
+        "key": "privilege",
+        "children": [
+          {
+            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+            "key": "privilege-add",
+            "icon": "<UnorderedListOutlined />"
+          },
+          {
+            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+            "key": "privilege-list",
+            "icon": "<UnorderedListOutlined />"
+          }
+        ]
+      },
+      {
+        "label": "角色管理",
+        "key": "privilege",
+        "children": [
+          {
+            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+            "key": "privilege-add",
+            "icon": "<UnorderedListOutlined />"
+          },
+          {
+            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+            "key": "privilege-list",
+            "icon": "<UnorderedListOutlined />"
+          }
+        ]
+      },
+      {
+        "label": "权限管理",
+        "key": "privilege",
+        "children": [
+          {
+            "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+            "key": "privilege-add",
+            "icon": "<UnorderedListOutlined />"
+          },
+          {
+            "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+            "key": "privilege-list",
+            "icon": "<UnorderedListOutlined />"
+          }
+        ]
+      }
+    ]
+  },
+  "menu":[
+    {
+      "label": "账号",
+      "key": "privilege",
+      "children": [
+        {
+          "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+          "key": "privilege-add",
+          "icon": "<UnorderedListOutlined />"
+        },
+        {
+          "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+          "key": "privilege-list",
+          "icon": "<UnorderedListOutlined />"
+        }
+      ]
+    },
+    {
+      "label": "角色管理",
+      "key": "privilege",
+      "children": [
+        {
+          "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+          "key": "privilege-add",
+          "icon": "<UnorderedListOutlined />"
+        },
+        {
+          "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+          "key": "privilege-list",
+          "icon": "<UnorderedListOutlined />"
+        }
+      ]
+    },
+    {
+      "label": "权限管理",
+      "key": "privilege",
+      "children": [
+        {
+          "label": "<Link to=\"/privilege/add\">添加权限</Link>",
+          "key": "privilege-add",
+          "icon": "<UnorderedListOutlined />"
+        },
+        {
+          "label": "<Link to=\"/privilege/list\">权限列表</Link>",
+          "key": "privilege-list",
+          "icon": "<UnorderedListOutlined />"
+        }
+      ]
+    }
+  ]
 }
