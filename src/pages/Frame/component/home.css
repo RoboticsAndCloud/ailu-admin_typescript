@@ -54,6 +54,7 @@ html,body,#root{
 
 .admin-header-right {
     display: flex;
+    /* flex: 1; */
     padding: 0 12px;
     transition: all .3s;
 }
@@ -74,16 +75,21 @@ html,body,#root{
     background: #192336;
 }
 
-.admin-header-action-2 {
+.admin-header-right-2 {
     /* display: flex; */
     padding: 0 12px;
     transition: all .3s;
+    padding-right: 10%;
+    color: #0c0000;
+}
+
+.admin-header-action-2 {
     cursor: pointer;
     padding: 0 12px;
-    /* margin-right: 91%; */
-    right: 100;
     color: #0c0000;
     transition: all .3s;
+    float: right;
+    width: 90px;
 }
 
 .admin-header-action-2 a {

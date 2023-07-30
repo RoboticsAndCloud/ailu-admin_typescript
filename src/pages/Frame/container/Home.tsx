@@ -428,6 +428,7 @@ const FrameHome: React.FC = () => {
         />
       </Sider> */}
         <Layout className="admin-main">
+          
         <Header style={{ padding: 0, background: 'white' }}>
           <Button
             type="text"
@@ -439,12 +440,12 @@ const FrameHome: React.FC = () => {
               height: 64,
             }}
           />
-
           <span className="admin-header-action-2">
             <a target={'_blank'} href="https://github.com/phachon/ailu-admin" rel="noreferrer">
               <GithubOutlined />
             </a>
           </span>
+
           <Dropdown menu={{ items: menuItemsAccount }}>
             <span className="admin-header-action-2">
               <Space>
