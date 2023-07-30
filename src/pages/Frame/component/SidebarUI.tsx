@@ -1,20 +1,30 @@
 import { Layout, Menu, MenuProps } from 'antd';
+// @ts-ignore
+import logoImg from '../../../assets/images/logo_2.png';
 
 interface FrameSidebarUIProps {
   menuItems: MenuProps['items'];
   menuClickCallback?: (e: any) => void;
+  collapsed?:boolean
 }
 
 const FrameSidebarUI = (props: FrameSidebarUIProps) => {
   return (
-    <Layout.Sider
-      collapsible
+    <Layout.Sider trigger={null} collapsible collapsed={props.collapsed}
+      // collapsible
       collapsedWidth="48px"
       width="208px"
       className="admin-sidebar"
-      theme="light"
+      theme="dark"
     >
+    <div className="admin-header-logo">
+      <a href="/">
+      <img src={logoImg} alt="logo"></img>
+      <span> Admin System </span>
+      </a>
+    </div>
       <Menu
+        theme="dark"
         mode="inline"
         className="admin-sidebar-menu"
         style={{

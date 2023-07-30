@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, MenuProps } from 'antd';
+import {MenuProps, Layout, Menu, Button, theme, Space, Dropdown } from 'antd';
+import {
+  GithubOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+  LoginOutlined,
+  ProfileOutlined,
+  LockOutlined,
+} from '@ant-design/icons';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { ProfileService } from '../../../services/Profile';
 import { ProfileInfoType } from '../../../store/types/profileType';
@@ -20,8 +31,11 @@ import {
 import DynamicIcon from '../../../components/DynamicIcon/DynamicIcon';
 import { FrameBreadcrumbItem } from '../../../store/types/adminType';
 
+// const {Menu, Button} = antd;
+const { Header, Sider, Content } = Layout;
+
 const homeConfig = {
-  footerText: 'AiLu Admin ©2022 Created by phachon',
+  footerText: 'Admin System ©2023 Created by Frank',
 };
 
 const mockMenuItems: MenuProps['items'] = [
@@ -131,7 +145,6 @@ const getMenuItemsByPrivilegeList = (
     });
   });
 
-  console.log('menuItems:', menuItems)
   return menuItems;
 };
 
@@ -184,12 +197,10 @@ const FrameHome: React.FC = () => {
 
     ProfileService.getProfileInfo()
       .then((profileInfo: any) => {
-        console.log('profileInfo.privilege_list:', profileInfo.privilege_list)
         setProfileAccountInfo(profileInfo.account_info);
         setLoginAccountInfo(profileInfo.account_info);
         setPrivilegeList(profileInfo.privilege_list);
         setPrivilegeNavItems(profileInfo.privilege_list); // 更新导航权限
-        console.log('profileInfo.privilege_list2:', profileInfo.privilege_list)
 
         setPrivilegeMenusItems(profileInfo.privilege_list); // 更新菜单权限
       })
@@ -283,17 +294,6 @@ const FrameHome: React.FC = () => {
           }
         ]
       }
-
-      // try {
-      //   // setProfileAccountInfo(mockProfileInfo.account_info);
-      // } catch (error) {
-      //   // alert(error)
-      // }
-      
-      // setLoginAccountInfo(mockProfileInfo.account_info);
-      // setPrivilegeList(mockProfileInfo.privilege_list);
-      // setPrivilegeNavItems(mockProfileInfo.privilege_list); // 更新导航权限
-      // setPrivilegeMenusItems(mockProfileInfo.privilege_list); // 更新菜单权限
   };
 
   /**
@@ -309,31 +309,6 @@ const FrameHome: React.FC = () => {
    * 更新菜单 item 数据
    * @param privilegeList 权限列表
    */
-  // const setPrivilegeMenusItems = (privilegeList?: MenuProps['items']) => {
-  //   if (!privilegeList || privilegeList.length === 0) {
-  //     setMenuItems([]);
-  //     return;
-  //   }
-  //   // 获取第一个导航的默认ID
-  //   let defNavId: bigint | undefined;
-  //   if (privilegeList && privilegeList.length > 0) {
-  //     defNavId = privilegeList[0].privilege_info.privilege_id;
-  //   }
-  //   // 查找导航对应的菜单权限
-  //   let menuPrivileges: PrivilegeListItemType[] = [];
-  //   privilegeList?.forEach(privilegeItem => {
-  //     if (privilegeItem.privilege_info.privilege_id === defNavId) {
-  //       menuPrivileges = privilegeItem.child_privileges;
-  //     }
-  //   });
-  //   let menuItems = getMenuItemsByPrivilegeList(menuPrivileges);
-  //   // // todo 测试加上mock
-  //   console.log(privilegeList)
-  //   // let menuItems = privilegeList
-  //   // menuItems?.push(...mockMenuItems);
-  //   setMenuItems(menuItems);
-  // };
-
   const setPrivilegeMenusItems = (privilegeList?: PrivilegeListItemType[]) => {
     if (!privilegeList || privilegeList.length === 0) {
       setMenuItems([]);
@@ -390,18 +365,96 @@ const FrameHome: React.FC = () => {
     setBreadcrumbItems(updateBreadcrumbItems);
   };
 
+  const [collapsed, setCollapsed] = useState(false);
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
+
+  const menuItemsAccount: MenuProps['items'] = [
+    {
+      label: <Link to="/profile/info">个人信息</Link>,
+      key: 'profile_info',
+      icon: <ProfileOutlined />,
+    },
+    {
+      label: <Link to="/profile/repass">修改密码</Link>,
+      key: 'profile_repass',
+      icon: <LockOutlined />,
+    },
+    {
+      type: 'divider',
+    },
+    {
+      label: <a onClick={logoutCallback}>退出登录</a>,
+      key: 'profile_logout',
+      icon: <LoginOutlined />,
+    },
+  ];
+  
   return (
     <Layout>
-      <FrameHeaderUI
+      {/* <FrameHeaderUI
         loginAccountInfo={loginAccountInfo}
         logoutCallback={logoutCallback}
         navItems={navItems}
         navSelectCallback={navSelectCallback}
-      />
+      /> */}
       <Layout>
-        <FrameSidebarUI menuItems={menuItems} menuClickCallback={menuClickCallback} />
+        <FrameSidebarUI menuItems={menuItems} menuClickCallback={menuClickCallback} collapsed={collapsed}/>
+{/* 
+        <Sider trigger={null} collapsible collapsed={collapsed}>
+        <div className="demo-logo-vertical" />
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={['1']}
+          items={[
+            {
+              key: '1',
+              icon: <UserOutlined />,
+              label: 'nav 1',
+            },
+            {
+              key: '2',
+              icon: <VideoCameraOutlined />,
+              label: 'nav 2',
+            },
+            {
+              key: '3',
+              icon: <UploadOutlined />,
+              label: 'nav 3',
+            },
+          ]}
+        />
+      </Sider> */}
         <Layout className="admin-main">
-          <FrameBreadcrumbUI items={breadcrumbItems} />
+        <Header style={{ padding: 0, background: 'white' }}>
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
+            style={{
+              fontSize: '16px',
+              width: 64,
+              height: 64,
+            }}
+          />
+
+          <span className="admin-header-action-2">
+            <a target={'_blank'} href="https://github.com/phachon/ailu-admin" rel="noreferrer">
+              <GithubOutlined />
+            </a>
+          </span>
+          <Dropdown menu={{ items: menuItemsAccount }}>
+            <span className="admin-header-action-2">
+              <Space>
+                <UserOutlined />
+                {loginAccountInfo?.name}
+              </Space>
+            </span>
+          </Dropdown>
+        </Header>
+          {/* <FrameBreadcrumbUI items={breadcrumbItems} /> */}
           <Layout.Content className="admin-content">
             <Outlet />
           </Layout.Content>

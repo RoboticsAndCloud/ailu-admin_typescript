@@ -74,6 +74,26 @@ html,body,#root{
     background: #192336;
 }
 
+.admin-header-action-2 {
+    /* display: flex; */
+    padding: 0 12px;
+    transition: all .3s;
+    cursor: pointer;
+    padding: 0 12px;
+    /* margin-right: 91%; */
+    right: 100;
+    color: #0c0000;
+    transition: all .3s;
+}
+
+.admin-header-action-2 a {
+    color: #0c0000;
+}
+
+.admin-header-action-2:hover {
+    background: #fff;
+}
+
 .admin-header-left .ant-menu.ant-menu-dark .ant-menu-item-selected {
     background-color: #192336;
 }
