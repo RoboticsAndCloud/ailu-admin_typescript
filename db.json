@@ -44,6 +44,23 @@
           {
             "privilege_info": {   
               "privilege_id": 2,
+              "name": "首页",
+              "parent_id": 1, 
+              "parent_ids": "1", 
+              "privilege_type": 2, 
+              "page_router": "/",
+              "api_path": "/",
+              "icon": "", 
+              "is_display": 1,
+              "sequence": 1,
+              "create_time": "20230606",
+              "update_time": "20230606"
+            },
+            "child_privileges":[      
+              ]},
+          {
+            "privilege_info": {   
+              "privilege_id": 2,
               "name": "账号管理",
               "parent_id": 1, 
               "parent_ids": "1", 
