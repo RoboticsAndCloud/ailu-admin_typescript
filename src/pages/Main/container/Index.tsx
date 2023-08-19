@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MainIndexUI from '../component/IndexUI';
+import MainDashbaordUI from '../component/Dashboard';
 
 const MainIndex: React.FC = () => {
   return (
@@ -9,4 +10,13 @@ const MainIndex: React.FC = () => {
   );
 };
 
+const MainDashboardIndex: React.FC = () => {
+  return (
+    <div className="panel">
+      <MainDashbaordUI />
+    </div>
+  );
+};
+
 export default MainIndex;
+export {MainDashboardIndex};

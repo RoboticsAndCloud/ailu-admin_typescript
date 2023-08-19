@@ -37,7 +37,7 @@ const AdminRouters: IRouter[] = [
       {
         index: true,
         key: 'main_index',
-        component: <Main.MainIndex />,
+        component: <Main.MainDashboardIndex />,
       },
       {
         path: '/profile/info',
