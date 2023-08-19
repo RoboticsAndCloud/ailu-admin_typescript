@@ -28,4 +28,28 @@ http://localhost:3004/posts/
 npm run start 
 http://localhost:3000
 
+https://codesandbox.io/s/m43zpd?file=/demo.tsx
+https://v0-charts.ant.design/demos/line#%E5%A4%9A%E6%8A%98%E7%BA%BF%E5%9B%BE
 
+echarts
+https://juejin.cn/post/7097967515480883207
+
+
+npm uninstall @ant-design/icons@5.2.5 --no-save
+
+npm install @ant-design/icons --save
+
+npm install --save antd
+
+    "antd": "^4.24.7",
+
+
+
+
+update react type package to fix your issues
+
+npm i @types/react@latest
+npm i @types/react-dom@latest
+
+npm install --save echarts
+npm install --save echarts-for-react

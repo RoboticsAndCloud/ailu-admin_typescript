@@ -67,7 +67,7 @@ const AccountListUI = (props: AccountListUIProps) => {
             <span>
               <Button
                 className="button-link"
-                icon={<SelectOutlined />}
+                icon={<SelectOutlined rev={undefined} />}
                 type="link"
                 size="small"
                 onClick={() => props.detailClickCallback(accountInfo)}
@@ -76,7 +76,7 @@ const AccountListUI = (props: AccountListUIProps) => {
               </Button>
               <Button
                 className="button-link"
-                icon={<FormOutlined />}
+                icon={<FormOutlined rev={undefined} />}
                 type="link"
                 size="small"
                 onClick={() => props.editClickCallback(accountInfo)}
@@ -94,7 +94,7 @@ const AccountListUI = (props: AccountListUIProps) => {
                 >
                   <Button
                     className="button-link"
-                    icon={<CloseSquareOutlined />}
+                    icon={<CloseSquareOutlined rev={undefined} />}
                     type="link"
                     size="small"
                   >
@@ -113,7 +113,7 @@ const AccountListUI = (props: AccountListUIProps) => {
                 >
                   <Button
                     className="button-link"
-                    icon={<CheckSquareOutlined />}
+                    icon={<CheckSquareOutlined rev={undefined} />}
                     type="link"
                     size="small"
                   >

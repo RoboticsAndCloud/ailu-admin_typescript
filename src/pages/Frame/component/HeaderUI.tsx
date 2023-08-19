@@ -24,12 +24,12 @@ const FrameHeaderUI = (props: FrameHeaderUIProps) => {
     {
       label: <Link to="/profile/info">个人信息</Link>,
       key: 'profile_info',
-      icon: <ProfileOutlined />,
+      icon: <ProfileOutlined rev={undefined} />,
     },
     {
       label: <Link to="/profile/repass">修改密码</Link>,
       key: 'profile_repass',
-      icon: <LockOutlined />,
+      icon: <LockOutlined rev={undefined} />,
     },
     {
       type: 'divider',
@@ -37,20 +37,20 @@ const FrameHeaderUI = (props: FrameHeaderUIProps) => {
     {
       label: <a onClick={props.logoutCallback}>退出登录</a>,
       key: 'profile_logout',
-      icon: <LoginOutlined />,
+      icon: <LoginOutlined rev={undefined} />,
     },
   ];
   return (
     <div className="admin-header-right">
     <span className="admin-header-action">
       <a target={'_blank'} href="https://github.com/phachon/ailu-admin" rel="noreferrer">
-        <GithubOutlined />
+        <GithubOutlined rev={undefined} />
       </a>
     </span>
     <Dropdown menu={{ items: menuItems }}>
       <span className="admin-header-action">
         <Space>
-          <UserOutlined />
+          <UserOutlined rev={undefined} />
           {props.loginAccountInfo?.name}
         </Space>
       </span>

@@ -374,12 +374,12 @@ const FrameHome: React.FC = () => {
     {
       label: <Link to="/profile/info">个人信息</Link>,
       key: 'profile_info',
-      icon: <ProfileOutlined />,
+      icon: <ProfileOutlined rev={undefined} />,
     },
     {
       label: <Link to="/profile/repass">修改密码</Link>,
       key: 'profile_repass',
-      icon: <LockOutlined />,
+      icon: <LockOutlined rev={undefined} />,
     },
     {
       type: 'divider',
@@ -387,7 +387,7 @@ const FrameHome: React.FC = () => {
     {
       label: <a onClick={logoutCallback}>退出登录</a>,
       key: 'profile_logout',
-      icon: <LoginOutlined />,
+      icon: <LoginOutlined rev={undefined} />,
     },
   ];
   
@@ -432,7 +432,7 @@ const FrameHome: React.FC = () => {
         <Header style={{ padding: 0, background: 'white' }}>
           <Button
             type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            icon={collapsed ? <MenuUnfoldOutlined rev={undefined} /> : <MenuFoldOutlined rev={undefined} />}
             onClick={() => setCollapsed(!collapsed)}
             style={{
               fontSize: '16px',
@@ -442,14 +442,14 @@ const FrameHome: React.FC = () => {
           />
           <span className="admin-header-action-2">
             <a target={'_blank'} href="https://github.com/phachon/ailu-admin" rel="noreferrer">
-              <GithubOutlined />
+              <GithubOutlined rev={undefined} />
             </a>
           </span>
 
           <Dropdown menu={{ items: menuItemsAccount }}>
             <span className="admin-header-action-2">
               <Space>
-                <UserOutlined />
+                <UserOutlined rev={undefined} />
                 {loginAccountInfo?.name}
               </Space>
             </span>

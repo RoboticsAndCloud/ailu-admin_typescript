@@ -48,7 +48,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
           <span>
             {privilegeItem.privilege_info.name}
             <a href="#!" onClick={() => props.editClickCallback(privilegeItem.privilege_info)}>
-              <EditOutlined style={{ marginLeft: 6 }} />
+              <EditOutlined style={{ marginLeft: 6 }} rev={undefined} />
             </a>
             <Popconfirm
               title="确定要删除吗?"
@@ -59,7 +59,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
               cancelText="取消"
             >
               <a href="#!">
-                <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} />
+                <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} rev={undefined} />
               </a>
             </Popconfirm>
           </span>
@@ -108,7 +108,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
                     href="#!"
                     onClick={() => props.editClickCallback(menuPrivilegeItem.privilege_info)}
                   >
-                    <EditOutlined style={{ marginLeft: 6, marginRight: 0 }} />
+                    <EditOutlined style={{ marginLeft: 6, marginRight: 0 }} rev={undefined} />
                   </a>
                   <Popconfirm
                     title="确定要删除吗?"
@@ -119,7 +119,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
                     cancelText="取消"
                   >
                     <a href="#!">
-                      <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} />
+                      <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} rev={undefined} />
                     </a>
                   </Popconfirm>
                 </span>
@@ -129,7 +129,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
                 autoExpandParent
                 showIcon
                 showLine={{ showLeafIcon: false }}
-                switcherIcon={<CaretDownOutlined />}
+                switcherIcon={<CaretDownOutlined rev={undefined} />}
                 rootStyle={{ padding: 8 }}
                 checkStrictly={true}
                 defaultExpandAll={true}
@@ -158,7 +158,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
           />
           {privilegeListItem.privilege_info.name}
           <a href="#!" onClick={() => props.editClickCallback(privilegeListItem.privilege_info)}>
-            <EditOutlined style={{ marginLeft: 6, marginRight: 0 }} />
+            <EditOutlined style={{ marginLeft: 6, marginRight: 0 }} rev={undefined} />
           </a>
           <Popconfirm
             title="确定要删除吗?"
@@ -169,7 +169,7 @@ const PrivilegeListTreeUI = (props: PrivilegeListTreeUIProps) => {
             cancelText="取消"
           >
             <a href="#!">
-              <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} />
+              <DeleteOutlined style={{ marginLeft: 6, marginRight: 0 }} rev={undefined} />
             </a>
           </Popconfirm>
         </span>

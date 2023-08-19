@@ -1,4 +1,5 @@
 import {
+  UserOutlined,
   UnorderedListOutlined,
   LinkOutlined,
   HddOutlined,
@@ -7,6 +8,9 @@ import {
   DesktopOutlined,
   ChromeOutlined,
   CodeOutlined,
+  MessageOutlined,
+  MoneyCollectOutlined,
+  ShoppingCartOutlined,
 } from '@ant-design/icons';
 import {
   Alert,
@@ -18,6 +22,7 @@ import {
   List,
   Row,
   Space,
+  Statistic,
   Table,
   Timeline,
   Typography,
@@ -25,10 +30,12 @@ import {
 
 import "./dashboard.css";
 
+import CountUp from 'react-countup';
 import Marquee from 'react-fast-marquee';
+import DemoLine from './IndexChartUI';
 const { Text, Link } = Typography;
 const { Meta } = Card;
-
+const formatter = (value: number) => <CountUp end={value} separator="," />;
 
 interface MainIndexUIProps {}
 
@@ -103,49 +110,26 @@ const cardStyle: React.CSSProperties = {
 const MainDashbaordUI = (props: MainIndexUIProps) => {
   return (
 
-    <div>
+    <div >
+     {/* <Row className="panel-body" gutter={24}>
+        <Col span={6}>
+          <Avatar icon = {<UserOutlined/>}/>
+          <Statistic title="New Visits" value={112893} />
+        </Col>
+        <Col span={6}>
+          <Statistic title="Messages" value={81212} />
+        </Col>
 
-<div className="space-align-container">
-    <div className="space-align-block">
-      <Space align="center">
-      <img
-        alt="example"
-        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-      />
-       
-        <span className="mock-block">
-          <p>New Visits</p>
-          <p>102,400</p>
-          </span>
-      </Space>
-    </div>
-    <div className="space-align-block">
-      <Space align="start">
-        <Card
-          style={{
-            width: 300
-          }}
-        >
-          <p>New Visits</p>
-          <p>102,400</p>
-        </Card>
-      </Space>
-    </div>
-    <div className="space-align-block">
-      <Space align="end">
-        end
-        <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
-      </Space>
-    </div>
-    <div className="space-align-block">
-      <Space align="baseline">
-        baseline
-        <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
-      </Space>
-    </div>
-  </div>
+        <Col span={6}>
+          <Statistic title="Account Balance (CNY)" value={9280} precision={2} />
+      
+        </Col>
+
+        <Col span={6}>
+          <Statistic title="Shoppings" value={13600} />
+        </Col>
+
+      </Row> */}
 
       <div className="panel-body">
         <Alert
@@ -158,6 +142,58 @@ const MainDashbaordUI = (props: MainIndexUIProps) => {
           }
         />
       </div>
+
+    <div className="panel-body">
+    <div className="space-align-block">
+      <Space align="baseline" size={'large'}>
+        <Space align="center">
+        <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+          <Statistic title="New Visits" value={112893} />
+        </Space>
+
+        <Space align="center">
+          <Avatar style={{ backgroundColor: '#00bfff' }} icon = {<MessageOutlined />}/>
+          <Statistic title="Messages" value={81212} />
+        </Space>
+
+        <Space align="center">
+          <Avatar style={{ backgroundColor: '#FF1F4AFF' }} icon = {<MoneyCollectOutlined />}/>
+          <Statistic title="Account Balance (CNY)" value={9280} precision={2} />
+        </Space>
+
+        <Space align="center">
+          <Avatar style={{ backgroundColor: '#87d068' }} icon = {<ShoppingCartOutlined />}/>
+          <Statistic title="Shoppings" value={13600} />
+        </Space>
+
+      </Space>
+    </div>
+
+    <div className="space-align-block">
+        <DemoLine />
+    </div>
+
+    {/* <div className="space-align-block">
+      <Space align="center">
+         <Avatar icon = {<UnorderedListOutlined/>}/>
+         <Statistic title="Messages" value={81212} />
+      </Space>
+    </div>
+    <div className="space-align-block">
+      <Space align="center">
+        <Avatar icon = {<UnorderedListOutlined/>}/>
+        <Statistic title="Account Balance (CNY)" value={9280} precision={2} />
+      </Space>
+    </div>
+    <div className="space-align-block">
+      <Space align="center">
+        <Avatar icon = {<UnorderedListOutlined/>}/>
+        <Statistic title="Shoppings" value={13600} />
+      </Space>
+    </div> */}
+  </div>
+
+
       <div className="panel-body">
         <Row gutter={16}>
           <Col span={16}>
