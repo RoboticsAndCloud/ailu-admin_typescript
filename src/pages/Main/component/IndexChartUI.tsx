@@ -17,6 +17,20 @@ const getOption = () => {
     yAxis: {
       type: 'value'
     },
+    grid: {
+      left: 10,
+      right: 10,
+      bottom: 20,
+      top: 30,
+      containLabel: true
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross'
+      },
+      padding: [5, 10]
+    },
     series: [
       {
         data: [150, 230, 224, 218, 135, 147, 260],
@@ -26,7 +40,7 @@ const getOption = () => {
   };
   return option
 }
-  return <ReactEcharts style={{width:'90%', backgroundColor: 'white'}} option={getOption()} />;
+  return <ReactEcharts className='panel-body' style={{backgroundColor: 'white'}} option={getOption()} />;
   // style: https://github.com/frenic/csstype#what-should-i-do-when-i-get-type-errors
 };
 
