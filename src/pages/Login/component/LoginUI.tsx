@@ -1,7 +1,7 @@
 import { Button, Checkbox, Col, Form, Input, Row, Tabs } from 'antd';
 import { GithubOutlined, LikeOutlined, UserOutlined, LockOutlined } from '@ant-design/icons';
 // @ts-ignore
-import logoImg from '../../../assets/images/logo_2.png';
+import logoImg from '../../../assets/images/sboot.png';
 import './login.css';
 const { TabPane } = Tabs;
 
@@ -139,15 +139,15 @@ const LoginUI = (props: LoginUIProps) => {
       <div className="login-footer">
         <p className="login-footer-recommed">* 推荐使用 Chrome 或 FireFox 浏览器访问 *</p>
         <p className="login-footer-copyright">
-          <a href="https://github.com/phachon/ailu-admin" target="_black">
+          <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             AiLu-Admin
           </a>{' '}
-          © 2022 Created by
-          <a href="https://github.com/phachon" target="_black">
+          © 2023 Created by
+          <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             {' '}
-            phachon
+            Frank
           </a>
-          <a href="https://github.com/phachon/ailu-admin" target="_black">
+          <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             {' '}
             <LikeOutlined /> <GithubOutlined />
           </a>

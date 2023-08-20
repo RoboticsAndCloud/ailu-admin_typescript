@@ -53,3 +53,24 @@ npm i @types/react-dom@latest
 
 npm install --save echarts
 npm install --save echarts-for-react
+
+https://github.com/RoboticsAndCloud/ailu-admin_typescript
+
+系统管理
+用户管理
+角色管理
+菜单管理
+部门管理
+岗位管理
+字典管理
+任务调度
+
+系统监控
+
+运维管理
+
+系统工具
+
+组件管理
+
+多级菜单

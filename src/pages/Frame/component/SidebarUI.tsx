@@ -1,6 +1,6 @@
 import { Layout, Menu, MenuProps } from 'antd';
 // @ts-ignore
-import logoImg from '../../../assets/images/logo_2.png';
+import logoImg from '../../../assets/images/sboot.png';
 
 interface FrameSidebarUIProps {
   menuItems: MenuProps['items'];

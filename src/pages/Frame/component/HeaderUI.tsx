@@ -7,7 +7,7 @@ import {
   LockOutlined,
 } from '@ant-design/icons';
 // @ts-ignore
-import logoImg from '../../../assets/images/logo_2.png';
+import logoImg from '../../../assets/images/sboot.png';
 import { Link } from 'react-router-dom';
 import { AccountInfoType } from '../../../store/types/accountType';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
