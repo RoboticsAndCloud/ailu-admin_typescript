@@ -66,11 +66,36 @@ https://github.com/RoboticsAndCloud/ailu-admin_typescript
 任务调度
 
 系统监控
+在线用户
+操作日志
+异常日志
+服务监控
+
 
 运维管理
+服务器
+应用管理
+部署管理
+部署备份
+数据库管理
+
 
 系统工具
+代码生成
+存储管理
+邮件工具
+支付宝工具
+
 
 组件管理
+图表库
+图标库
+富文本
+Markdown
+Yaml编辑器
 
 多级菜单
+
+https://blog.csdn.net/weixin_46878718/article/details/127192096
+
+https://www.jb51.net/article/213114.htm

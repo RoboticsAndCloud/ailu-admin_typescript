@@ -1,5 +1,5 @@
 import { Button, Checkbox, Col, Form, Input, Row, Tabs } from 'antd';
-import { GithubOutlined, LikeOutlined, UserOutlined, LockOutlined } from '@ant-design/icons';
+import { GithubOutlined, LikeOutlined, UserOutlined, LockOutlined, CheckCircleOutlined } from '@ant-design/icons';
 // @ts-ignore
 import logoImg from '../../../assets/images/sboot.png';
 import './login.css';
@@ -40,6 +40,13 @@ const SystemLoginUI = (props: LoginUIProps) => {
           type="password"
           placeholder="请输入系统登录密码"
         />
+      </Form.Item>
+      <Form.Item name="captcha" rules={[{ required: true, message: '请输入验证码!' }]}>
+        <Input
+          size="large"
+          prefix={<CheckCircleOutlined className="site-form-item-icon" />}
+          placeholder="请输入验证码"
+        /> 
       </Form.Item>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
@@ -125,7 +132,7 @@ const LoginUI = (props: LoginUIProps) => {
       <div className="login-header">
         <div className="login-title">
           <img src={logoImg} alt="logo"></img>
-          <span>AiLu-Admin 系统登录</span>
+          <span>Admin System 系统登录</span>
         </div>
         <p>一个基于 React + Antd 开发的中后台管理系统</p>
       </div>
@@ -140,7 +147,7 @@ const LoginUI = (props: LoginUIProps) => {
         <p className="login-footer-recommed">* 推荐使用 Chrome 或 FireFox 浏览器访问 *</p>
         <p className="login-footer-copyright">
           <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
-            AiLu-Admin
+            Admin System
           </a>{' '}
           © 2023 Created by
           <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
