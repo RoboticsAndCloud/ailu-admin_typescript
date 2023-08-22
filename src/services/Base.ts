@@ -5,7 +5,8 @@ class Base {
     private _proxyPrefix: string // proxy 前缀
 
     constructor() {
-        this._proxyPrefix = getUrlConfig().proxyUrl
+        // this._proxyPrefix = getUrlConfig().proxyUrl
+        this._proxyPrefix = '/account'
     }
 
     /**
@@ -14,7 +15,8 @@ class Base {
      * @returns string 
      */
     public getProxyUrl(url: string): string {
-        return this._proxyPrefix + url
+        // return this._proxyPrefix + url
+        return this._proxyPrefix
     }
 }
 
