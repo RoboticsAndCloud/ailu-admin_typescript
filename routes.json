@@ -1,0 +1,10 @@
+{
+  "/account/admin/account/list*":"/account",
+  "/account/admin/account/detail*": "/account_details",
+  "/account/admin/account/edit*": "/account_details",
+
+  "/account/admin/role/list*": "/rolelist",
+  "/account/admin/role/account_list*":"/account",
+  "/account/admin/role/privilege_edit*": "/role_privilege_type",
+  "/account/admin/role/edit*": "/roledetails"
+}

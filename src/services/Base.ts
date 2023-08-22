@@ -15,8 +15,8 @@ class Base {
      * @returns string 
      */
     public getProxyUrl(url: string): string {
-        // return this._proxyPrefix + url
-        return this._proxyPrefix
+        return this._proxyPrefix + url
+        // return this._proxyPrefix
     }
 }
 
