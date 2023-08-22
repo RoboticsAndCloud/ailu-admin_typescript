@@ -24,9 +24,6 @@ ailu-admin 是一个基于 React + React-Router + Antd  开发的中后台管理
 
 ![](./docs/imgs/account_list.png)
 
-![](./docs/imgs/privilege_add.png)
-
-![](./docs/imgs/privilege_list.png)
 </div>
 
 ## 功能
