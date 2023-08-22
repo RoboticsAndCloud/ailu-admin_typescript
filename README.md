@@ -62,7 +62,6 @@ $ npm start   # 浏览器访问 http://localhost:3000
 - 如果在使用过程中有任何问题， 请提交 [Issue](https://github.com/phachon/ailu-admin/issues).
 - 如果您发现并解决了bug，请提交 [Pull Request](https://github.com/phachon/ailu-admin/pulls).
 - 如果您想二次开发，欢迎 [Fork](https://github.com/phachon/ailu-admin/network/members).
-- 如果你想交个朋友，欢迎发邮件给 [phachon@163.com](mailto:phachon@163.com).
 
 ## License
 
