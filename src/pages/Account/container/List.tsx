@@ -13,6 +13,7 @@ import AccountFormUI from '../component/FormUI';
 import { initPagination } from '../../../store/states/adminState';
 import { RoleInfoType } from '../../../store/types/roleType';
 import AccountDetailUI from '../component/DetailUI';
+import AccountAddModifyUI from '../component/AddModifyUI';
 
 let searchValues = {};
 
@@ -24,6 +25,9 @@ const AccountList: React.FC = () => {
   const [detailAccountInfo, setDetailAccountInfo] = useState<AccountDetailInfoType>();
   const [detailModalOpen, setDetailModalOpen] = useState<boolean>(false);
   const [roleList, setRoleList] = useState<RoleInfoType[]>([]);
+
+  const [addModalOpen, setAddModalOpen] = useState<boolean>(false);
+  const [addAccountInfo, setAddAccountInfo] = useState<AccountInfoType>();
 
   useEffect(() => {
     getAccountList(initPagination, {});
@@ -142,6 +146,21 @@ const AccountList: React.FC = () => {
   };
 
   /**
+ * 新增弹框取消操作
+ */
+  const addModalCancelCallback = () => {
+    setAddModalOpen(false);
+  };
+
+
+  /**
+ * 修改弹框取消操作
+ */
+  const addModalCallback = () => {
+    setAddModalOpen(true);
+  };
+
+  /**
    * 修改完成操作
    * @param accountInfo AccountInfoType
    */
@@ -164,6 +183,11 @@ const AccountList: React.FC = () => {
       <AccountSearchUI
         searchChangeCallback={searchChangeCallback}
         searchResetCallback={searchResetCallback}
+      />
+      <AccountAddModifyUI
+      searchChangeCallback={searchChangeCallback}
+      searchResetCallback={searchResetCallback}
+      addClickCallback={addModalCallback}
       />
       <AccountListUI
         listLoading={false}
@@ -201,6 +225,21 @@ const AccountList: React.FC = () => {
           key={detailAccountInfo?.account_info.account_id.toString()}
         />
       </Modal>
+
+      <Modal
+        title="账号新增"
+        width={570}
+        open={addModalOpen}
+        onCancel={addModalCancelCallback}
+        footer={null}
+      >
+        <AccountFormUI
+          roleList={roleList}
+          accountInfo={addAccountInfo}
+          onFinishCallback={editOnFinishCallback}
+        />
+      </Modal>
+      
     </div>
   );
 };

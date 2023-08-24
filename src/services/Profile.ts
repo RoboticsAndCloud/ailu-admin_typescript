@@ -3,8 +3,7 @@ import httpRequest from "./http";
 import {ProfileInfoType} from "../store/types/profileType";
 
 const profileUrl = {
-    // profileInfo: "/admin/profile/info",
-    profileInfo: "",
+    profileInfo: "/admin/profile/info",
     profileUpdate: "/admin/profile/update",
     profileRepass: "/admin/profile/repass",
 }

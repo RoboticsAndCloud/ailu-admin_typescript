@@ -1,4 +1,6 @@
 {
+  "/admin-api/admin/profile/info": "/profile",
+  
   "/account/admin/account/list*":"/account",
   "/account/admin/account/detail*": "/account_details",
   "/account/admin/account/edit*": "/account_details",

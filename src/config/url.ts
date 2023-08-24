@@ -4,8 +4,8 @@ interface UrlConfig {
 }
 
 const devUrlConfig :UrlConfig = {
-    // proxyUrl: "/admin-api",
-    proxyUrl: "/profile",
+    proxyUrl: "/admin-api",
+    // proxyUrl: "/profile",
     // proxyUrl: "/login",
 }
 
