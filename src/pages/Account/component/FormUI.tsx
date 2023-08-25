@@ -110,7 +110,7 @@ const AccountFormUI = (props: AccountFormUIProps) => {
         <Form.Item
           label="角色"
           name="role_ids"
-          rules={[{ required: true, message: '请选择角色!' }]}
+          rules={[{ required: false, message: '请选择角色!' }]}
           getValueProps={val => {
             let value = val ? val.split(',') : [];
             return { value: value };

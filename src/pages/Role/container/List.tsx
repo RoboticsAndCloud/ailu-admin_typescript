@@ -11,6 +11,7 @@ import { AccountInfoType, AccountListType } from '../../../store/types/accountTy
 import PrivilegeUI from '../component/PrivilegeUI';
 import { PrivilegeListItemType } from '../../../store/types/privilegeType';
 import { arrayToString } from '../../../utils/utils';
+import AccountAddModifyUI from '../component/AddModifyUI';
 
 let searchKeyWords = {};
 let accountListRoleInfo: RoleInfoType; // 账号列表角色信息
@@ -30,6 +31,10 @@ const RoleList: React.FC = () => {
   const [privilegeModalOpen, setPrivilegeModalOpen] = useState<boolean>(false);
   const [rolePrivilegIds, setRolePrivilegeIds] = useState<string[]>([]);
   const [allPrivileges, setAllPrivileges] = useState<PrivilegeListItemType[]>([]);
+
+  const [addModalOpen, setAddModalOpen] = useState<boolean>(false);
+  const [addRoleInfo, setAddRoleInfo] = useState<RoleInfoType>();
+
 
   useEffect(() => {
     getRoleList(initPagination, {});
@@ -232,11 +237,23 @@ const RoleList: React.FC = () => {
       });
   };
 
+  /**
+ * 修改弹框取消操作
+ */
+  const addModalCallback = () => {
+    setAddModalOpen(true); // todo: add Modal instead of editModalOpen
+  };
+
   return (
     <div className="panel">
       <RoleSearchUI
         searchChangeCallback={searchChangeCallback}
         searchResetCallback={searchResetCallback}
+      />
+      <AccountAddModifyUI
+        searchChangeCallback={searchChangeCallback}
+        searchResetCallback={searchResetCallback}
+        addClickCallback={addModalCallback}
       />
       <RoleListUI
         listLoading={false}
@@ -248,6 +265,16 @@ const RoleList: React.FC = () => {
         accountListClickCallback={accountListClickCallback}
         privilegeClickCallback={privilegeEditClickCallback}
       />
+      <Modal
+        title="角色新增"
+        width={570}
+        open={addModalOpen}
+        onCancel={() => setAddModalOpen(false)}
+        footer={null}
+      >
+        <RoleFormUI roleInfo={addRoleInfo} onFinishCallback={editFinishCallback} />
+      </Modal>
+
       <Modal
         title="角色修改"
         width={570}

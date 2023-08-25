@@ -178,6 +178,24 @@ const AccountList: React.FC = () => {
       });
   };
 
+    /**
+   * 修改完成操作
+   * @param accountInfo AccountInfoType
+   */
+    const addOnFinishCallback = (accountInfo: AccountInfoType) => {
+      AccountService.saveAccount(accountInfo)
+        .then(() => {
+          message.success('修改成功', 2, () => {
+            setEditModalOpen(false);
+            getAccountList(pagination, searchValues);
+          });
+        })
+        .catch(e => {
+          console.log(e);
+          message.error('修改失败', 2);
+        });
+    };
+
   return (
     <div className="panel">
       <AccountSearchUI
@@ -236,7 +254,7 @@ const AccountList: React.FC = () => {
         <AccountFormUI
           roleList={roleList}
           accountInfo={addAccountInfo}
-          onFinishCallback={editOnFinishCallback}
+          onFinishCallback={addOnFinishCallback}
         />
       </Modal>
       

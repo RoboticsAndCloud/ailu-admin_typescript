@@ -35,6 +35,8 @@ class Account extends Base {
      */
     public saveAccount(accountInfo: {}): Promise<any> {
         const accountSaveUrl = this.getProxyUrl(accountUrl.save)
+        console.log('save url:', accountSaveUrl)
+        console.log('save:', accountInfo)
         return httpRequest.post<any>(accountSaveUrl, {}, accountInfo)
     }
 

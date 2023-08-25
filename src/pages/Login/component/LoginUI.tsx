@@ -2,6 +2,8 @@ import { Button, Checkbox, Col, Form, Input, Row, Tabs } from 'antd';
 import { GithubOutlined, LikeOutlined, UserOutlined, LockOutlined, CheckCircleOutlined } from '@ant-design/icons';
 // @ts-ignore
 import logoImg from '../../../assets/images/sboot.png';
+// import Background from '../../../assets/images/background.webp'
+
 import './login.css';
 const { TabPane } = Tabs;
 
@@ -124,7 +126,7 @@ const DomainLoginUI = (props: LoginUIProps) => {
 const LoginUI = (props: LoginUIProps) => {
   const items = [
     { label: '系统账号登录', key: '1', children: <SystemLoginUI {...props} /> },
-    { label: '域账号登录', key: '2', children: <DomainLoginUI {...props} /> },
+    // { label: '域账号登录', key: '2', children: <DomainLoginUI {...props} /> },
   ];
 
   return (
@@ -134,7 +136,7 @@ const LoginUI = (props: LoginUIProps) => {
           <img src={logoImg} alt="logo"></img>
           <span>Admin System 系统登录</span>
         </div>
-        <p>一个基于 React + Antd 开发的中后台管理系统</p>
+
       </div>
       <div className="login-content">
         <Row justify="center">

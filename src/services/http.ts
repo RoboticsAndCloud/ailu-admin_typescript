@@ -10,7 +10,9 @@ const httpService = axios.create({
     headers: {
         Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'
     },
-    baseURL: 'http://127.0.0.1:3004/'
+    // baseURL: 'http://127.0.0.1:3004/'
+    baseURL: 'http://10.227.96.160:3004/'
+    
 })
 
 // request 请求拦截器
