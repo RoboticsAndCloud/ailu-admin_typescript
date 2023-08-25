@@ -7,12 +7,9 @@
 
 <div align="center">
   
-ailu-admin 是一个基于 React + React-Router + Antd  开发的中后台管理系统（开发中。。）
+eladmin 是一个基于 React + React-Router + Antd + Echarts 开发的后台管理系统 前端界面
 </br>
 
-[![Dependencies](https://img.shields.io/david/phachon/ailu-admin.svg)](https://david-dm.org/phachon/ailu-admin) [![DevDependencies](https://img.shields.io/david/dev/phachon/ailu-admin.svg)](https://david-dm.org/phachon/ailu-admin?type=dev)
-[![stable](https://img.shields.io/badge/stable-stable-green.svg)](https://github.com/phachon/ailu-admin/) 
-[![build](https://img.shields.io/shippable/5444c5ecb904a4b21567b0ff.svg)](https://travis-ci.org/phachon/ailu-admin)
 [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/phachon/ailu-admin/master/LICENSE)
 [![platforms](https://img.shields.io/badge/platform-All-yellow.svg?style=flat)]()
 [![download_count](https://img.shields.io/github/downloads/phachon/ailu-admin/total.svg?style=plastic)](https://github.com/phachon/ailu-admin/releases) 
