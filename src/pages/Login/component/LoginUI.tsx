@@ -43,13 +43,13 @@ const SystemLoginUI = (props: LoginUIProps) => {
           placeholder="请输入系统登录密码"
         />
       </Form.Item>
-      <Form.Item name="captcha" rules={[{ required: true, message: '请输入验证码!' }]}>
+      {/* <Form.Item name="captcha" rules={[{ required: true, message: '请输入验证码!' }]}>
         <Input
           size="large"
           prefix={<CheckCircleOutlined className="site-form-item-icon" />}
           placeholder="请输入验证码"
         /> 
-      </Form.Item>
+      </Form.Item> */}
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>自动登录</Checkbox>
@@ -146,7 +146,7 @@ const LoginUI = (props: LoginUIProps) => {
         </Row>
       </div>
       <div className="login-footer">
-        <p className="login-footer-recommed">* 推荐使用 Chrome 或 FireFox 浏览器访问 *</p>
+        {/* <p className="login-footer-recommed">* 推荐使用 Chrome 或 FireFox 浏览器访问 *</p> */}
         <p className="login-footer-copyright">
           <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             Admin System
@@ -154,7 +154,7 @@ const LoginUI = (props: LoginUIProps) => {
           © 2023 Created by
           <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             {' '}
-            Frank
+            Fei
           </a>
           <a href="https://github.com/RoboticsAndCloud/ailu-admin_typescript" target="_black">
             {' '}

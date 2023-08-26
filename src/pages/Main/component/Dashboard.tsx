@@ -74,8 +74,7 @@ const MainDashbaordUI = (props: MainIndexUIProps) => {
         />
       </div>
       
-      <div className="panel-body">
-      {/* <div className="space-align-block"> */}
+      {/* <div className="panel-body"> */}
         <Row gutter={24} className="panel-body">
           <Col span={6}>
             <Space align="center">
@@ -105,7 +104,6 @@ const MainDashbaordUI = (props: MainIndexUIProps) => {
           </Col>
         </Row>
       {/* </div> */}
-      </div>
 
       <div className="panel-body">
         <div className="space-align-block">
